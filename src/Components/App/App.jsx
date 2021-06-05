@@ -1,11 +1,15 @@
-import ContactsPage from '../../Pages/ContactsPage';
+import AppBar from '../AppBar';
 import Container from '../Container';
+import Router from '../Router';
 
 const App = () => {
   return (
-    <Container>
-      <ContactsPage />
-    </Container>
+    <>
+      <AppBar />
+      <Container>
+        <Router />
+      </Container>
+    </>
   );
 };
 

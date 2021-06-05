@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+.navLink {
+  color: #fff;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.navLinkActive {
+  text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ContactsPage from './ContactsPage';
+import ContactsPage from './Contacts';
 import { fetchContacts } from '../../redux/contacts/contacts-operations';
 import {
   getAllContacts,

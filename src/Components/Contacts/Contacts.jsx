@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import ContactForm from '../../Components/ContactForm';
-import ContactList from '../../Components/ContactList';
-import Filter from '../../Components/Filter';
-import Loader from '../../Components/Loader';
+import ContactForm from '../ContactForm';
+import ContactList from '../ContactList';
+import Filter from '../Filter';
+import Loader from '../Loader';
 import styles from './ContactsPage.module.css';
 
 class ContactsPage extends Component {
