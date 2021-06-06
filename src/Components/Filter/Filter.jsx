@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import Input from '../Input';
 
-const Filter = ({ onChangeFilter }) => {
+const Filter = ({ value, onChangeFilter }) => {
   return (
-    <Input type="text" name="find contacts by name" onChange={onChangeFilter} />
+    <Input
+      type="text"
+      value={value}
+      name="find contacts by name"
+      onChange={onChangeFilter}
+    />
   );
 };
 Filter.propTypes = {

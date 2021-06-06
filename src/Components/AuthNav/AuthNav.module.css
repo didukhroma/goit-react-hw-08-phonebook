@@ -1,8 +1,4 @@
-.nav {
-  display: flex;
-  align-items: center;
-}
-.navLink {
+.link {
   display: inline-block;
   text-decoration: none;
   font-weight: 700;
@@ -11,6 +7,6 @@
   margin-right: 20px;
 }
 
-.navLinkActive {
+.activeLink {
   color: #e84a5f;
 }

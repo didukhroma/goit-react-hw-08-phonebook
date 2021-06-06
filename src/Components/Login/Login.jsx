@@ -1,9 +1,16 @@
 import { AuthForm } from '../AuthForm/AuthForm';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
+  const handleAuth = ({ email, password }) => {
+    // onLogin({ email, password });
+    onLogin({
+      email: 'test123456@mail.com',
+      password: 'test123456',
+    });
+  };
   return (
     <div>
-      <AuthForm email={true} password={true} />
+      <AuthForm cbAuth={handleAuth} />
     </div>
   );
 };

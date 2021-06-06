@@ -7,6 +7,7 @@ const Input = ({
   name = 'input',
   pattern,
   title = 'input',
+  value = '',
   onChange,
 }) => {
   const text = capitalize(name);
@@ -19,6 +20,7 @@ const Input = ({
         name={name}
         pattern={pattern}
         title={title}
+        value={value}
         required
         onChange={onChange}
       />

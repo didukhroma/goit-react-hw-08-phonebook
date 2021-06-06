@@ -1,20 +1,29 @@
 import { NavLink } from 'react-router-dom';
+// import cx from 'classnames';
 import { navPath } from '../../Routes/routes';
 import styles from './Navigation.module.css';
-const Navigation = () => {
+const { mainPage, contactsPage } = navPath;
+const Navigation = ({ isAuthenticated }) => {
   return (
     <nav className={styles.nav}>
-      {navPath.map(({ id, exact, path, text }) => (
+      <NavLink
+        exact={mainPage.exact}
+        to={mainPage.path}
+        className={styles.navLink}
+        activeClassName={styles.navLinkActive}
+      >
+        {mainPage.text}
+      </NavLink>
+      {isAuthenticated && (
         <NavLink
-          key={id}
-          exact={exact}
-          to={path}
+          exact={contactsPage.exact}
+          to={contactsPage.path}
           className={styles.navLink}
           activeClassName={styles.navLinkActive}
         >
-          {text}
+          {contactsPage.text}
         </NavLink>
-      ))}
+      )}
     </nav>
   );
 };

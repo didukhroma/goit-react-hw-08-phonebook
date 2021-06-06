@@ -1,12 +1,12 @@
 import { AuthForm } from '../AuthForm/AuthForm';
 
-const Registration = () => {
+const Registration = ({ onRegister }) => {
   const handleAuth = data => {
-    console.log(data);
+    onRegister(data);
   };
   return (
     <div>
-      <AuthForm text={true} email={true} password={true} cbAuth={handleAuth} />
+      <AuthForm register cbAuth={handleAuth} />
     </div>
   );
 };

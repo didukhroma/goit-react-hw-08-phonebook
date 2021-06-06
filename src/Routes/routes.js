@@ -12,6 +12,7 @@ const routes = [
     exact: true,
     text: 'MainPage',
     publicRoute: true,
+    redirect: '/',
   },
   {
     id: 'RegisterPage',
@@ -20,6 +21,7 @@ const routes = [
     exact: true,
     text: 'RegisterPage',
     publicRoute: true,
+    redirect: '/contacts',
   },
   {
     id: 'LoginPage',
@@ -28,6 +30,7 @@ const routes = [
     exact: true,
     text: 'LoginPage',
     publicRoute: true,
+    redirect: '/contacts',
   },
   {
     id: 'ContactsPage',
@@ -36,11 +39,12 @@ const routes = [
     exact: true,
     text: 'ContactsPage',
     publicRoute: false,
+    redirect: '/login',
   },
 ];
 //---------------------------------------Header-Navigation
 const mainPage = routes.find(({ id }) => id === 'MainPage');
 const contactsPage = routes.find(({ id }) => id === 'ContactsPage');
-const navPath = [mainPage, contactsPage];
+const navPath = { mainPage, contactsPage };
 //--------------------------------------
 export { routes, navPath };

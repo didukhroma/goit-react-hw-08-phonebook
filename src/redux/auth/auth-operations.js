@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as authActions from './auth-actions';
 
-axios.defaults.baseURL = 'https://lpj-tasker.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
   set(token) {
@@ -17,10 +17,10 @@ export const register = userData => async dispatch => {
   dispatch(authActions.registerRequest());
 
   try {
-    const response = await axios.post('/users/signup', userData);
+    const { data } = await axios.post('/users/signup', userData);
 
-    token.set(response.data.token);
-    dispatch(authActions.registerSuccess(response.data));
+    token.set(data.token);
+    dispatch(authActions.registerSuccess(data));
   } catch (error) {
     dispatch(authActions.registerError(error.message));
   }
@@ -31,10 +31,10 @@ export const logIn = userData => async dispatch => {
   dispatch(authActions.loginRequest());
 
   try {
-    const response = await axios.post('/users/login', userData);
+    const { data } = await axios.post('/users/login', userData);
 
-    token.set(response.data.token);
-    dispatch(authActions.loginSuccess(response.data));
+    token.set(data.token);
+    dispatch(authActions.loginSuccess(data));
   } catch (error) {
     dispatch(authActions.loginError(error.message));
   }
@@ -68,9 +68,9 @@ export const getCurrentUser = () => async (dispatch, getState) => {
   dispatch(authActions.getCurrentUserRequest());
 
   try {
-    const response = await axios.get('/users/current');
+    const { data } = await axios.get('/users/current');
 
-    dispatch(authActions.getCurrentUserSuccess(response.data));
+    dispatch(authActions.getCurrentUserSuccess(data));
   } catch (error) {
     dispatch(authActions.getCurrentUserError(error.message));
   }

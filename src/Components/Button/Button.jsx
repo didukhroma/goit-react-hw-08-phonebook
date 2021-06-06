@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
-const Button = ({ type = 'button', text = 'Button', onDeletedById, id }) => {
+const Button = ({
+  type = 'button',
+  text = 'Button',
+  onDeletedById,
+  id,
+  cdOnClick,
+}) => {
   const handleClick = () => {
+    if (cdOnClick) return cdOnClick();
     if (!id) return;
     onDeletedById(id);
   };
@@ -19,6 +26,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   id: PropTypes.string,
   onDeletedById: PropTypes.func,
+  cdOnClick: PropTypes.func,
 };
 
 export default Button;
