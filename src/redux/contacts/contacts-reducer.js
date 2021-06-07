@@ -33,10 +33,12 @@ const loadingReducer = createReducer(false, {
 const filterReducer = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
 });
+
+const setError = (_, { payload }) => alert(payload);
 const errorReducer = createReducer(null, {
-  // [fetchContactsError]: () => alert('Oops.Please try again'),
-  // [addContactError]: () => alert('Oops.Please try again'),
-  // [deleteContactError]: () => alert('Oops.Please try again'),
+  [fetchContactsError]: () => setError,
+  [addContactError]: () => setError,
+  [deleteContactError]: () => setError,
 });
 
 export { contactsReducer, loadingReducer, filterReducer, errorReducer };
