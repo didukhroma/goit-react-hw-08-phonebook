@@ -12,7 +12,6 @@ class ContactForm extends Component {
   };
 
   handleChange = event => {
-    console.log(event.target.value);
     const {
       target: { value, name },
     } = event;

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import styles from './Button.module.css';
 const Button = ({
   type = 'button',
@@ -6,6 +7,7 @@ const Button = ({
   onDeletedById,
   id,
   cdOnClick,
+  className,
 }) => {
   const handleClick = () => {
     if (cdOnClick) return cdOnClick();
@@ -14,7 +16,11 @@ const Button = ({
   };
 
   return (
-    <button type={type} onClick={handleClick} className={styles.button}>
+    <button
+      type={type}
+      onClick={handleClick}
+      className={cx(styles.button, className)}
+    >
       {text}
     </button>
   );
@@ -27,6 +33,7 @@ Button.propTypes = {
   id: PropTypes.string,
   onDeletedById: PropTypes.func,
   cdOnClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Button;

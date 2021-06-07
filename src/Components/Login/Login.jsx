@@ -1,12 +1,9 @@
+import PropTypes from 'prop-types';
 import { AuthForm } from '../AuthForm/AuthForm';
 
 const Login = ({ onLogin }) => {
   const handleAuth = ({ email, password }) => {
-    // onLogin({ email, password });
-    onLogin({
-      email: 'test123456@mail.com',
-      password: 'test123456',
-    });
+    onLogin({ email, password });
   };
   return (
     <div>
@@ -14,5 +11,7 @@ const Login = ({ onLogin }) => {
     </div>
   );
 };
-
+Login.propTypes = {
+  onLogin: PropTypes.func,
+};
 export default Login;

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input';
 import styles from './AuthForm.module.css';
@@ -41,8 +42,12 @@ export const AuthForm = ({ register, cbAuth }) => {
           value={user.password}
           onChange={handleChange}
         />
-        <Button type="submit" text={btnText} />
+        <Button type="submit" text={btnText} className={styles.button} />
       </form>
     </div>
   );
+};
+AuthForm.propTypes = {
+  register: PropTypes.bool,
+  cbAuth: PropTypes.func,
 };

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import cx from 'classnames';
 import { navPath } from '../../Routes/routes';
 import styles from './Navigation.module.css';
@@ -27,5 +28,7 @@ const Navigation = ({ isAuthenticated }) => {
     </nav>
   );
 };
-
+Navigation.propTypes = {
+  isAuthenticated: PropTypes.bool,
+};
 export default Navigation;

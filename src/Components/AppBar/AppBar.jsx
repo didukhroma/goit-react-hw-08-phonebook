@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import AuthNav from '../AuthNav/AuthNav';
 import Container from '../Container';
 import Navigation from '../Navigation';
@@ -13,5 +14,7 @@ const AppBar = ({ isAuthenticated }) => {
     </header>
   );
 };
-
+AppBar.propTypes = {
+  isAuthenticated: PropTypes.bool,
+};
 export default AppBar;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import styles from './UserMenu.module.css';
 const UserMenu = ({ userEmail, onLogout }) => {
@@ -8,5 +9,8 @@ const UserMenu = ({ userEmail, onLogout }) => {
     </div>
   );
 };
-
+UserMenu.propTypes = {
+  userEmail: PropTypes.string,
+  onLogout: PropTypes.func,
+};
 export default UserMenu;
